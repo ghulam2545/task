@@ -1,4 +1,4 @@
-from app import db
+from app import db, bcrypt
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -6,6 +6,7 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(80), nullable=False)
     role = db.Column(db.String(80), nullable=False)
+    verfied = db.Column(db.Boolean, default=True) # adjust this default
 
     def __repr__(self):
         return f'<User {self.username}>'
@@ -21,8 +22,8 @@ class File(db.Model):
         return f'<File {self.filename}>'
     
 
-user1 = User(username='shafi', email='shafi@gmail.com', password='shafi', role='CLIENT')
-user2 = User(username='ghulam', email='ghulam@gmail.com', password='ghulam', role='OPEARTION')
+# user1 = User(username='shafi', email='shafi@gmail.com', password=bcrypt.generate_password_hash('shafi'), role='CLIENT')
+# user2 = User(username='ghulam', email='ghulam@gmail.com', password=bcrypt.generate_password_hash('ghulam'), role='OPERATION')
 
 # db.create_all()
 # db.session.add(user1)
