@@ -18,3 +18,21 @@ Client Users have access to a broader set of functionalities:
 - [x] **Login**: Authenticate to the system to gain access to additional functionalities.
 - [x] **Download File**: Download files from the system.
 - [x] **List of All Uploaded Files**: View a list of all files that have been uploaded to the system.
+
+
+### How to
+Create a virtual environment and activate it
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+Listing of all project dependencies
+```bash
+pip freeze > requirements.txt
+```
+
+Download all project dependencies
+```bash
+pip install -r requirements.txt
+```
